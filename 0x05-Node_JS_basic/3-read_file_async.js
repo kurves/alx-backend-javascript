@@ -9,7 +9,7 @@ function countStudents(path) {
         throw new Error('Cannot load the database');
       }
 
-      const students = lines.slice(1);  // Skip the header line
+      const students = lines.slice(1);
       console.log(`Number of students: ${students.length}`);
 
       const fields = {};
@@ -27,9 +27,9 @@ function countStudents(path) {
       }
     })
     .catch((error) => {
+      console.error(error);
       throw new Error('Cannot load the database');
     });
 }
 
 module.exports = countStudents;
-
